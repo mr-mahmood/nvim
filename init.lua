@@ -1,3 +1,7 @@
+vim.cmd([[
+  autocmd BufEnter * if filereadable(".venv/bin/activate") | let $VIRTUAL_ENV=getcwd().."/.venv" | let $PATH=expand("$VIRTUAL_ENV/bin:")..$PATH | endif
+]])
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     local lazyrepo = "https://github.com/folke/lazy.nvim.git"
