@@ -8,5 +8,6 @@ return {
 				theme = "auto",
 			},
 		})
+
 	end,
 }
