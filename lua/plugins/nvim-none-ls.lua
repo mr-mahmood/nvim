@@ -5,8 +5,12 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.black, --install balck from :Mason
-				null_ls.builtins.formatting.isort, --install isort from :Mason
+				null_ls.builtins.formatting.black.with({
+					extra_args = {
+						{ "--max-line-length", "500" },
+						{ "--ignore", "E501" },
+					},
+				}),
 			},
 		})
 		vim.keymap.set("n", "<leader>sf", vim.lsp.buf.format, {})

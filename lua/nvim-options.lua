@@ -19,6 +19,12 @@ vim.cmd("set nu rnu")
 
 vim.g.mapleader = " "
 
+-- tmux vnim navigator 
+vim.keymap.set('n', '<C-k>', '"wincmd k<CR>')
+vim.keymap.set('n', '<C-j>', '"wincmd j<CR>')
+vim.keymap.set('n', '<C-h>', '"wincmd h<CR>')
+vim.keymap.set('n', '<C-l>', '"wincmd l<CR>')
+
 -- Save file with <leader>w (you can change <leader> to your preferred leader key)
 vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })
 
